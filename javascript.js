@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // create function to calculate the outcome of the game
     function calculateWinner(humanHand, computerHand) {
-        switch (humanHand - computerHand) {
+        let result = humanHand - computerHand;
+        log(result);
+        switch (result) {
             case (-2):
             case (-1):
                 humanScore ++;
@@ -46,12 +48,14 @@ document.addEventListener("DOMContentLoaded", function(){
                 log(`Computer chose: ${returnHand(computerHand)}`);
                 log(`You chose: ${returnHand(humanHand)}`);
                 log("Congrratulations, you Won the match.");
+                break;
 
             case(0):
                 log("");
                 log(`Computer chose: ${returnHand(computerHand)}`);
                 log(`You chose: ${returnHand(humanHand)}`);
                 log("You drawed with the computer. Try again.");
+                break;
 
             case(1):
             case(2):
@@ -60,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 log(`Computer chose: ${returnHand(computerHand)}`);
                 log(`You chose: ${returnHand(humanHand)}`);
                 log("The computer won the match. Better luck next time!");
+                break;
         }; 
     };
 
@@ -118,6 +123,38 @@ document.addEventListener("DOMContentLoaded", function(){
         calculateWinner(humanCoice, computerChoice);
     };
 
-    playRound(getHumanChoice(), getComputerChoice());
 
+    // ___________________________________________________________________________________________________________________________________________
+    // create Game loop
+    function gameLoop() {
+        let repeat = true;
+        while (repeat) {
+            playRound(getHumanChoice(), getComputerChoice());
+            let continueGame;
+
+            log("");
+            log("The current score is:");
+            log("Human vs Computer");
+            log(`  ${humanScore}     ${computerScore}`);
+
+            if (humanScore === 5) {
+                log("");
+                log("Congratulations, You won the game!");
+                continueGame = confirm("Do you want to play again?");
+                if (!continueGame) {
+                    repeat = false;
+                };
+            }else if (computerScore === 5) {
+                log("");
+                log("The computer won the game. Nice try.");
+                continueGame = confirm("Do you want to play again?");
+                if (!continueGame) {
+                    repeat = false;
+                };
+            };
+
+        };
+    };
+
+    gameLoop();
 });
