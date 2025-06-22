@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     let log = console.log;
+    let targetScore = 5;
 
     // ___________________________________________________________________________________________________________________________________________
     // Helper Functions
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function(){
             log("Human vs Computer");
             log(`  ${humanScore}     ${computerScore}`);
 
-            if (humanScore === 5) {
+            if (humanScore === TargetScore) {
                 log("");
                 log("Congratulations, You won the game!");
 
@@ -153,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 // reset score
                 computerScore = 0;
                 humanScore = 0;
-            }else if (computerScore === 5) {
+            }else if (computerScore === TargetScore) {
                 log("");
                 log("The computer won the game. Nice try.");
 
