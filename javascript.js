@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", function(){
     // ___________________________________________________________________________________________________________________________________________
     // create function to convert the users Chice to a number (1 = Rock, 2 = Paper, 3 = Scissors)
     function convertUserChoiceToNumber(userChoice) {
+        if (userChoice != undefined) {
         userChoice = userChoice.toLowerCase();
+        };
+
         switch(userChoice) {
             case "rock":
             case "1":
@@ -140,17 +143,29 @@ document.addEventListener("DOMContentLoaded", function(){
             if (humanScore === 5) {
                 log("");
                 log("Congratulations, You won the game!");
+
+                //ask user if he wants to play another game
                 continueGame = confirm("Do you want to play again?");
                 if (!continueGame) {
                     repeat = false;
                 };
+
+                // reset score
+                computerScore = 0;
+                humanScore = 0;
             }else if (computerScore === 5) {
                 log("");
                 log("The computer won the game. Nice try.");
+
+                //ask user if he wants to play another game
                 continueGame = confirm("Do you want to play again?");
                 if (!continueGame) {
                     repeat = false;
                 };
+
+                // reset score
+                computerScore = 0;
+                humanScore = 0;
             };
 
         };
