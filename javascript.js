@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create function getComputerChoice
   function getComputerChoice() {
     // get random number
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create function getHumanChoice
   function getHumanChoice() {
     let repeat = true;
@@ -117,13 +117,12 @@ document.addEventListener("DOMContentLoaded", function () {
     return userChoice;
   }
 
-  // ___________________________________________________________________________________________________________________________________________
   // create function playRound
   function playRound(humanCoice, computerChoice) {
     calculateWinner(humanCoice, computerChoice);
   }
 
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create Game loop
   function gameLoop() {
     let repeat = true;
