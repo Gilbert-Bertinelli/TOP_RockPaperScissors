@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   let log = console.log;
   let targetScore = 5;
+  let humanScore = 0;
+  let computerScore = 0;
 
   // _________________________________________________________________________________________________
   // Helper Functions
@@ -46,9 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let result = humanHand.toString() + computerHand.toString();
     log(result);
     switch (result) {
-      case 13:
-      case 21:
-      case 32:
+      case "13":
+      case "21":
+      case "32":
         humanScore++;
         log("");
         log(`Computer chose: ${returnHand(computerHand)}`);
@@ -56,9 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
         log("Congrratulations, you Won the match.");
         break;
 
-      case 12:
-      case 23:
-      case 31:
+      case "12":
+      case "23":
+      case "31":
         computerScore++;
         log("");
         log(`Computer chose: ${returnHand(computerHand)}`);
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create function getComputerChoice
   function getComputerChoice() {
     // get random number
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create function getHumanChoice
   function getHumanChoice() {
     let repeat = true;
@@ -115,18 +117,13 @@ document.addEventListener("DOMContentLoaded", function () {
     return userChoice;
   }
 
-  // ___________________________________________________________________________________________________________________________________________
-  // declare humanScore and computerScore
-  let humanScore = 0;
-  let computerScore = 0;
-
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create function playRound
   function playRound(humanCoice, computerChoice) {
     calculateWinner(humanCoice, computerChoice);
   }
 
-  // ___________________________________________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________
   // create Game loop
   function gameLoop() {
     let repeat = true;
@@ -134,12 +131,12 @@ document.addEventListener("DOMContentLoaded", function () {
       playRound(getHumanChoice(), getComputerChoice());
       let continueGame;
 
-      log("");
+      log(" ");
       log("The current score is:");
       log("Human vs Computer");
       log(`  ${humanScore}     ${computerScore}`);
 
-      if (humanScore === TargetScore) {
+      if (humanScore === targetScore) {
         log("");
         log("Congratulations, You won the game!");
 
@@ -152,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // reset score
         computerScore = 0;
         humanScore = 0;
-      } else if (computerScore === TargetScore) {
-        log("");
+      } else if (computerScore === targetScore) {
+        log(" ");
         log("The computer won the game. Nice try.");
 
         //ask user if he wants to play another game
