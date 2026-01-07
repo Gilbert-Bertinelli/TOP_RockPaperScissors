@@ -167,3 +167,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   gameLoop();
 });
+
+const ttt = 3;
