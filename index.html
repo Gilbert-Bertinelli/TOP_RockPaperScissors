@@ -3,19 +3,37 @@
         <head>
             <meta charset="utf-8">
             <meta http-equiv="x-ua-compatible" content="ie=edge">
-            <title>Untitled</title>
+            <title>Scissors Paper Rock</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-
-            <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
-            <!-- Place favicon.ico in the root directory -->
-            <script type="text/javascript" src="./javascript.js"></script>
+            <script type="text/javascript" src="javascript.js"></script>
+            <link rel="stylesheet" href="style.css">
         </head>
         <body>
-            <style type="text/css" media="">
-                body{
-                    background-color: #333;
-                    color: #fff;
-                }
-            </style>
+          <header>
+            <h1 id = "header">Scissors Paper Rock</h1>
+          </header>
+          <div id="flexbox">
+            <div id="results">
+              <h2 id="score-heading">
+                <p>Human</p>
+                <p>vs</p>
+                <p>Computer</p>
+              </h2>
+              <h2 id="scores">
+                <p id = "human-score">0</p>
+                <p></p>
+                <p id = "computer-score">0</p>
+              </h2>
+              <div id="round">
+                <p id="human-hand"></p>
+                <p id="computer-hand"></p>
+                <p id="winner"></p>
+              </div>
+            </div>
+            <div id="buttons"></div>
+            <div id="placeholder"></div>
+          </div>
+          
         </body>
     </html>
+
