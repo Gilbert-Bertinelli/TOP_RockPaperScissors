@@ -1,0 +1,116 @@
+:root{
+    /* Default Theme */
+    --colourBg: #fff;
+    --colourText: #333;
+    --colourPrimary: #007bff;
+    --colourHeader: #e8e9ea;
+}
+
+[data-theme="dark"] {
+    /* Default Theme */
+    --colourBg: #333;
+    --colourText: #f0f0f0;
+    --colourPrimary: #bb86fc;
+    --colourHeader: #4e4e4e;
+}
+html{height: 100%; margin: 0;}
+
+body{
+    margin: 0 0 0 0;
+    background-color: var(--colourBg);
+    color: var(--colourText);
+    height: 100%;
+}
+
+header{
+    height: 70px;
+    background-color: var(--colourHeader);
+    margin: 0 0 0 0;
+    padding: 20;
+}
+
+h1{
+    text-align: center;
+    margin: 0 0 0 0;
+    padding-top: 10px;
+}
+
+#flexbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* height: 100%; */
+
+}
+
+#flexbox > div{
+    /* flex:1 */
+}
+
+#score-heading, #scores{
+    display: flex;
+}
+#scores{
+    margin-top: -60px;
+}
+
+#score-heading > p, #scores>p{
+    flex: 0.3;
+    text-align: center;
+    font-size: 80;
+}
+#scores > p:nth-child(2){
+    flex:0.4
+}
+#score-heading > p:first-child{
+    flex: 1;
+    text-align: right;
+}
+#score-heading > p:last-child{
+    flex: 1;
+    text-align: left;
+}
+#scores > p:first-child{
+    flex: 1;
+    text-align: right;
+}
+#scores > p:last-child{
+    flex: 1;
+    text-align: left;
+}
+
+#results{
+    align-content: center;
+    /* border: 4px solid green; */
+    height: 200px;
+}
+
+/* #buttons{ */
+/*     border: 4px solid blue */
+/* } */
+
+/* #placeholder{ */
+/*     border: 4px solid purple */
+/* } */
+
+#buttons{
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+
+}
+
+#round{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#human-hand,#computer-hand,#winner{
+    margin: 0;
+    font-size: 30px;
+    font-style: ;
+}
